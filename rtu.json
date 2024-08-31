@@ -1,0 +1,94 @@
+{
+  "server_list": {
+    "server": {
+      "comm": "serial",
+      "port": "/dev/modbus_rtu_in",
+      "stopbits": 2,
+      "bytesize": 8,
+      "parity": "N",
+      "baudrate": 19200,
+      "timeout": 3,
+      "reconnect_delay": 2,
+      "framer": "rtu",
+      "identity": {
+        "VendorName": "pymodbus",
+        "ProductCode": "PM",
+        "VendorUrl": "https://github.com/pymodbus-dev/pymodbus/",
+        "ProductName": "pymodbus Server",
+        "ModelName": "pymodbus Server",
+        "MajorMinorRevision": "3.1.0"
+      }
+    }
+  },
+  "device_list": {
+    "device": {
+      "setup": {
+        "co size": 63000,
+        "di size": 63000,
+        "hr size": 63000,
+        "ir size": 63000,
+        "shared blocks": true,
+        "type exception": true,
+        "defaults": {
+          "value": {
+            "bits": 0,
+            "uint16": 0,
+            "uint32": 0,
+            "float32": 0.0,
+            "string": " "
+          },
+          "action": {
+            "bits": null,
+            "uint16": "increment",
+            "uint32": "increment",
+            "float32": "increment",
+            "string": null
+          }
+        }
+      },
+      "invalid": [
+        1
+      ],
+      "write": [],
+      "bits": [],
+      "uint16": [],
+      "uint32": [],
+      "float32": [
+        {
+          "addr": [
+            2530,
+            2531
+          ],
+          "value": 0,
+          "action": "increment"
+        },
+        {
+          "addr": [
+            2532,
+            2533
+          ],
+          "value": 100,
+          "action": "increment"
+        },
+        {
+          "addr": [
+            2534,
+            2535
+          ],
+          "value": 200,
+          "action": "increment"
+        },
+        {
+          "addr": [
+            2536,
+            2537
+          ],
+          "value": 300,
+          "action": "increment"
+        }
+      ],
+      "string": [],
+      "repeat": []
+    }
+  }
+}

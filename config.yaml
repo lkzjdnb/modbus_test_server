@@ -1,0 +1,9 @@
+electrolyzer:
+  port: 4502
+  input_dump: input_regs_dump.csv
+  holding_dump: holding_regs_dump.csv
+electrolyzer-meter:
+  port: /dev/modbus_rtu
+  groupid: 993
+  input_dump: meter_input_dump.csv
+  holding_dump: meter_holding_dump.csv
