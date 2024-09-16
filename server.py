@@ -26,6 +26,10 @@ def open_pty(port, groupid, **kwds):
     master, slave = os.openpty()
     slave_path = os.ttyname(slave)
 
+    # if there is an old broken symlink, remove it
+    if not os.path.exists(os.readlink(port)):
+        os.remove(port)
+
     os.symlink(slave_path, port)
 
     os.chmod(slave, mode = 0o660)
