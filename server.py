@@ -24,9 +24,10 @@ conf = yaml.load(args.config, Loader = yaml.Loader)
 @contextmanager
 def open_pty(port, groupid, **kwds):
     # if there is an old broken symlink, remove it
-    if not os.path.exists(os.readlink(port)):
-        print("Removing broken symlink")
-        os.remove(port)
+    if os.path.exists(port):
+        if not os.path.exists(os.readlink(port)):
+            print("Removing broken symlink")
+            os.remove(port)
 
     master, slave = os.openpty()
     slave_path = os.ttyname(slave)
